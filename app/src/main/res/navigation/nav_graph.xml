@@ -7,19 +7,23 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="io.github.andraantariksa.tokko.FirstFragment"
+        android:name="io.github.andraantariksa.tokko.ui.HomeFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/enter_right_to_left_only_enter_move"
+            app:exitAnim="@anim/nothing"
+            app:popEnterAnim="@anim/enter_right_to_left_only_enter_move"
+            app:popExitAnim="@anim/nothing" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="io.github.andraantariksa.tokko.SecondFragment"
+        android:name="io.github.andraantariksa.tokko.ui.ProductFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_product">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

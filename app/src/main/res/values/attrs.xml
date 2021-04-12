@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RadioButtonRectangle">
+        <attr name="textPrimary" format="string" />
+        <attr name="textSecondary" format="string" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+    <!--  TODO decide to use  -->
+    <declare-styleable name="RadioButtonGroup">
+    </declare-styleable>
+</resources>

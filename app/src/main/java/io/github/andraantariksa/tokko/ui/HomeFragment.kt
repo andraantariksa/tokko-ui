@@ -1,24 +1,24 @@
-package io.github.andraantariksa.tokko
+package io.github.andraantariksa.tokko.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.flexbox.FlexboxLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import io.github.andraantariksa.tokko.ProductsAdapter
 import io.github.andraantariksa.tokko.data.model.Product
-import io.github.andraantariksa.tokko.databinding.FragmentFirstBinding
+import io.github.andraantariksa.tokko.databinding.FragmentHomeBinding
 
-class FirstFragment : Fragment() {
-    private lateinit var binding: FragmentFirstBinding
+class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val dummy = arrayOf(
@@ -27,7 +27,7 @@ class FirstFragment : Fragment() {
             Product("Shoes Flexible", 120f),
             Product("Shoes Flexible", 120f))
 
-        binding.recyclerViewTopSelling.layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewTopSelling.layoutManager = GridLayoutManager(context, 2)
         binding.recyclerViewTopSelling.adapter = ProductsAdapter(dummy)
 
         return view
