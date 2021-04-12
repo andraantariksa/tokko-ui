@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    app:cardBackgroundColor="#F7BE30"
+    app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/imageViewCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:padding="10dp"
+            android:src="@drawable/bag"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+</androidx.cardview.widget.CardView>
