@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="LightTheme" parent="Theme.App.Base">
+    <style name="DarkTheme" parent="Theme.App.Base">
         <color name="primary">#FF000000</color>
     </style>
 </resources>

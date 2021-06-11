@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import io.github.andraantariksa.tokko.data.model.Product
 import io.github.andraantariksa.tokko.databinding.ItemCardProductBinding
-import io.github.andraantariksa.tokko.ui.HomeFragmentDirections
+import io.github.andraantariksa.tokko.ui.MainFragmentDirections
 
 class ProductsAdapter(val productData: Array<Product>):
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
@@ -22,7 +22,7 @@ class ProductsAdapter(val productData: Array<Product>):
         holder.binding.textViewTitle.text = product.title
         holder.binding.textViewPrice.text = "$%.2f".format(product.price)
         holder.binding.root.setOnClickListener {
-            val action = HomeFragmentDirections.actionFirstFragmentToSecondFragment()
+            val action = MainFragmentDirections.actionFirstFragmentToSecondFragment()
             it.findNavController().navigate(action)
         }
     }

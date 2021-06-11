@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import io.github.andraantariksa.tokko.R
-import io.github.andraantariksa.tokko.databinding.FragmentHomeBinding
 import io.github.andraantariksa.tokko.databinding.FragmentProductBinding
 
 class ProductFragment : Fragment() {

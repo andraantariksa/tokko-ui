@@ -1,4 +1,4 @@
-package io.github.andraantariksa.tokko.ui
+package io.github.andraantariksa.tokko.ui.main
 
 import android.content.res.Resources
 import android.os.Bundle
@@ -11,27 +11,21 @@ import io.github.andraantariksa.tokko.ProductsAdapter
 import io.github.andraantariksa.tokko.R
 import io.github.andraantariksa.tokko.data.model.Category
 import io.github.andraantariksa.tokko.data.model.Product
-import io.github.andraantariksa.tokko.databinding.FragmentHomeBinding
-
+import io.github.andraantariksa.tokko.databinding.FragmentMainHomeBinding
+import io.github.andraantariksa.tokko.ui.GridSpacingItemDecoration
+import io.github.andraantariksa.tokko.ui.LinearSpacingItemDecoration
 
 class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentMainHomeBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val view = binding.root
-
+    ): View {
+        binding = FragmentMainHomeBinding.inflate(inflater, container, false)
         setupCategories()
         setupProducts()
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        return binding.root
     }
 
     private fun setupCategories() {
@@ -42,10 +36,10 @@ class HomeFragment : Fragment() {
             Category(R.drawable.hoodie_pink),
         )
         val spacingInPixels = (Resources.getSystem().displayMetrics.density * 8).toInt()
-        binding.includeContentMain.recyclerViewCategories.addItemDecoration(
+        binding.recyclerViewCategories.addItemDecoration(
             LinearSpacingItemDecoration(spacingInPixels)
         )
-        binding.includeContentMain.recyclerViewCategories.adapter = CategoriesAdapter(dummy)
+        binding.recyclerViewCategories.adapter = CategoriesAdapter(dummy)
     }
 
     private fun setupProducts() {
@@ -56,7 +50,7 @@ class HomeFragment : Fragment() {
             Product("Shoes Flexible", 120f)
         )
         val spacingInPixels = (Resources.getSystem().displayMetrics.density * 15).toInt()
-        binding.includeContentMain.recyclerViewTopSelling.addItemDecoration(
+        binding.recyclerViewTopSelling.addItemDecoration(
             GridSpacingItemDecoration(
                 2,
                 spacingInPixels,
@@ -64,6 +58,6 @@ class HomeFragment : Fragment() {
                 0
             )
         )
-        binding.includeContentMain.recyclerViewTopSelling.adapter = ProductsAdapter(dummy)
+        binding.recyclerViewTopSelling.adapter = ProductsAdapter(dummy)
     }
 }
